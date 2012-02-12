@@ -1,0 +1,41 @@
+12345678901234567890123456789012345678901234567890123456789
+
+Alpha Chen
+10/22/99
+Period 2
+
+     The astar algorithm is very similar to the best first
+search algorithm, having mainly the same variables also.
+Open is the same, but is sorted a different way.  Closed
+and n are entirely the same, as is l.  Extract_path is the
+same, as is successors.  Ptr is the same, tracing the path
+back to the starting city.
+     However, the astar program has several new functions,
+such as the f(x), g(x), and h(x) function.  These functions
+help determine where the program is going to "go" while
+looking for the goal node.  The h(x) function takes the
+difference between the longitudes of the node the program
+is at and the goal node, and then multiplies that number by
+ten.  It does the multiplication so that both properties
+are equal; having one property be in the hundreds and
+another in the tens would mean that the hundreds one
+affects the program more.  This gives the longitude
+distance an equal opportunity to determine where the
+program is going to go.  The g(x) function finds out how
+far the node it is looking at is from the start node.  It
+uses the functions arc_dist and cdr_select, which finds the
+distance between it and the city that it came from.  The
+f(x) function adds these two numbers together, producing a
+final number, which it uses to decide where to go.
+     The intersect function returns a list of the nodes
+that are the same in two lists, used in update_open and
+update_closed.  These functions change the nodes in open
+and closed to reflect where the program actually is,
+working only when the fvalues for the cities are changed.
+
+    It is different from the best-first search mainly in
+its searching algorithm.  It uses the f(x) function to
+decide where to go, using both the difference in longitude
+and the distance from the start.  It also has the update
+functions, used to see whether another path would have
+been better to go down.

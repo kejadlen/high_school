@@ -1,0 +1,29 @@
+Alpha Chen
+11/24/99
+Period 4
+
+14-1:
+(defmethod process ((friend philosopher-friend)
+		    (article computer-article)))
+
+14-2:
+(defclass music-article (article) ())
+(defmethod process ((friend friend)
+		    (article music-article))
+  (print-notification article friend))
+
+14-3:
+  political-computer-article
+  political-article
+  computer-article
+  article
+  standard-object
+  t
+
+This doesn't print anything.
+
+14-4:
+I think that this is because the "(friend friend)" is not as
+specific as the others, and since the precedence goes from
+left to right, the other "(friend business-friend)" takes
+precedence before this process function.

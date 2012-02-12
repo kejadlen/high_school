@@ -1,0 +1,71 @@
+1. Trace: (OPEN_NODE 'CAEN)
+2. Trace: (INSERT 'CAEN 'NIL)
+2. Trace: INSERT ==> (CAEN)
+1. Trace: OPEN_NODE ==> NIL
+1. Trace: (OPEN_NODE 'PARIS)
+2. Trace: (INSERT 'PARIS '(CAEN))
+2. Trace: INSERT ==> (PARIS CAEN)
+1. Trace: OPEN_NODE ==> NIL
+1. Trace: (OPEN_NODE 'BRE)
+2. Trace: (INSERT 'BRE '(PARIS CAEN))
+3. Trace: (INSERT 'BRE '(CAEN))
+4. Trace: (INSERT 'BRE 'NIL)
+4. Trace: INSERT ==> (BRE)
+3. Trace: INSERT ==> (CAEN BRE)
+2. Trace: INSERT ==> (PARIS CAEN BRE)
+1. Trace: OPEN_NODE ==> NIL
+1. Trace: (OPEN_NODE 'NAN)
+2. Trace: (INSERT 'NAN '(PARIS CAEN BRE))
+3. Trace: (INSERT 'NAN '(CAEN BRE))
+4. Trace: (INSERT 'NAN '(BRE))
+4. Trace: INSERT ==> (NAN BRE)
+3. Trace: INSERT ==> (CAEN NAN BRE)
+2. Trace: INSERT ==> (PARIS CAEN NAN BRE)
+1. Trace: OPEN_NODE ==> NIL
+1. Trace: (OPEN_NODE 'CAL)
+2. Trace: (INSERT 'CAL '(CAEN NAN BRE))
+2. Trace: INSERT ==> (CAL CAEN NAN BRE)
+1. Trace: OPEN_NODE ==> NIL
+1. Trace: (OPEN_NODE 'NCY)
+2. Trace: (INSERT 'NCY '(CAL CAEN NAN BRE))
+2. Trace: INSERT ==> (NCY CAL CAEN NAN BRE)
+1. Trace: OPEN_NODE ==> NIL
+1. Trace: (OPEN_NODE 'DI)
+2. Trace: (INSERT 'DI '(NCY CAL CAEN NAN BRE))
+2. Trace: INSERT ==> (DI NCY CAL CAEN NAN BRE)
+1. Trace: OPEN_NODE ==> NIL
+1. Trace: (OPEN_NODE 'LIM)
+2. Trace: (INSERT 'LIM '(DI NCY CAL CAEN NAN BRE))
+3. Trace: (INSERT 'LIM '(NCY CAL CAEN NAN BRE))
+4. Trace: (INSERT 'LIM '(CAL CAEN NAN BRE))
+5. Trace: (INSERT 'LIM '(CAEN NAN BRE))
+5. Trace: INSERT ==> (LIM CAEN NAN BRE)
+4. Trace: INSERT ==> (CAL LIM CAEN NAN BRE)
+3. Trace: INSERT ==> (NCY CAL LIM CAEN NAN BRE)
+2. Trace: INSERT ==> (DI NCY CAL LIM CAEN NAN BRE)
+1. Trace: OPEN_NODE ==> NIL
+1. Trace: (OPEN_NODE 'STRAS)
+2. Trace: (INSERT 'STRAS '(NCY CAL LIM CAEN NAN BRE))
+3. Trace: (INSERT 'STRAS '(CAL LIM CAEN NAN BRE))
+3. Trace: INSERT ==> (STRAS CAL LIM CAEN NAN BRE)
+2. Trace: INSERT ==> (NCY STRAS CAL LIM CAEN NAN BRE)
+1. Trace: OPEN_NODE ==> NIL
+1. Trace: (OPEN_NODE 'LY)
+2. Trace: (INSERT 'LY '(NCY STRAS CAL LIM CAEN NAN BRE))
+2. Trace: INSERT ==> (LY NCY STRAS CAL LIM CAEN NAN BRE)
+1. Trace: OPEN_NODE ==> NIL
+1. Trace: (OPEN_NODE 'GREN)
+2. Trace: (INSERT 'GREN '(NCY STRAS CAL LIM CAEN NAN BRE))
+2. Trace: INSERT ==> (GREN NCY STRAS CAL LIM CAEN NAN BRE)
+1. Trace: OPEN_NODE ==> NIL
+1. Trace: (OPEN_NODE 'AV)
+2. Trace: (INSERT 'AV '(GREN NCY STRAS CAL LIM CAEN NAN BRE))
+2. Trace: INSERT ==> (AV GREN NCY STRAS CAL LIM CAEN NAN BRE)
+1. Trace: OPEN_NODE ==> NIL
+(REN PARIS DI LY AV)
+[5]> (exit)(exit)
+Bye.
+]0;achen@station9:~/AIstation9:~/AI$ exit
+exit
+
+Script done on Mon Sep 11 21:59:30 1989

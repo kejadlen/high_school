@@ -1,0 +1,62 @@
+Alpha Chen
+12/20/99
+Period 2
+
+1. a) p->~p
+       This is a contradiction, and by using Wang's rules, this is
+       easy to prove - it becomes p=>(not)p and then p,p=>(nothing).
+   b) (pVq)^(~pV~q)
+       This seems like a non-tautology to me:
+      p q pVq ~pV~q (pVq)^(~pV~q)
+      0	0  0        1		 0
+      0	1  1	    1		 1
+      1	0  1	    1		 1
+      1	1  1	    0		 0
+   c) (p->q)^(q->~p)
+      (~pVq)^(~qV~p)
+      p q ~pVq ~qV~p (~pVq)^(~qV~p)
+      0 0   1    1         1
+      0 1   1	 1	   1
+      1 0   0	 0	   0
+      1	1   1	 0	   0
+   d) p->(~p->p)
+      ~pV(~p->p)
+      ~pV(pVp)
+      ~pVp
+      TRUE
+
+2. ((p->q)^(q->r))=>(p->r)
+   ((~pVq)^(~qVr))=>(~pVr) R5
+   (~pVq),(~qVr)=>~p,r	   R2
+   p,(~pVq),(~qVr)=>r	   R1
+      p,~p,(~qVr)=>r	      R3
+      p,(~qVr)=>r,p	      R6
+
+      p,q,(~qVr)=>r	      R3
+         p,q,~q=>r	         R3
+	 p,q=>r,q		 R6
+
+	 p,q,r=>r		 R6
+
+10. a) Maid stole jewelery (Mj)
+       Butler was guilty (Bg)
+       Maid milked cows (Mc)
+       Butler got cream (Bc)
+
+       Mj->~Bg
+       MjVMc
+       Mc->Bc
+       Bg->Bc
+
+    b) If the butler was not guilty then he did not get his cream
+
+    c) Mj->~Bg = ~MjV~Bg
+       Mc->Bc = ~McVBc
+
+        MjV Mc
+       ~MjV~Bc
+       -------
+        McV~Bc
+       ~McV Bc
+       -------
+       ~BcV Mc = Bg->Bc

@@ -1,0 +1,29 @@
+Alpha Chen
+10/15/99
+Period 2
+
+Best-first search
+
+     This program uses an algorithm to go through and find the best path between
+two cities.  It does this by checking which node that it can travel to can go
+closest to the goal node.  It keep doing this until it reaches the goal node.
+     It does the work in the main loop, using several variables to keep track of
+what it has done.  The variable "open" keeps track of where it has not been
+(which nodes it looked at but chose not to go) so that it will not retrace its
+steps.  The variable "closed" keeps track of where it went, in effect what is
+printed out at the end of the program.  "n" is the node which is currently being
+looked at; the node which the program is visiting.  "l" is the list containing
+all of the adjacent cities to 'n', keeping track of where it can go.  The
+"'fvalue" is the distance from the node to the goal, so that the program can use
+the value to compare nodes.
+     In the main loop, it first sets everything to the correct value.  Then, it
+goes through and selects 'n', picking the node which is closest to the goal from
+'open' (in other words, the first member of 'open').  Then, it deletes 'n' from
+open, moving it into 'closed'.  That means that the program has decided to go to
+'n'.  The exiting statement is when 'n' is equal to 'goal', and then it uses
+"extract_path", which reverses the closed list so that it goes from the start to
+finish.  Otherwise, it goes to "open_node", which puts where it has gone into
+'open' by using "insert", putting them into the right place.
+
+     This algorithm avoids circular paths by not going to any node which it has
+already looked at.

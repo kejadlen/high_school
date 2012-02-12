@@ -1,0 +1,41 @@
+012345678901234567890123456789012345678901234567890123456789
+
+Alpha Chen
+10/22/99
+Period 2
+
+11-1:
+(defun grandfather (x)
+  (cond ((get x 'father) (get (get x 'father))))
+)
+
+11-2:
+(defun adam (x)
+  (cond ((get x 'father) (adam (get x 'father)))
+	(T x))
+)
+
+11-3:
+(defun ancestors (x)
+  (cond ((not x) nil)
+	(T (cons x (append (ancestors (get x 'father))
+			   (ancestors (get x 'mother))))))
+)
+
+11-4:
+(defun connect (a b)
+  (let (a-neighbors (get a 'neighbors))
+       (b-neighbors (get b 'neighbors)))
+  (cond ((not (member b a-neighbors)) (setf (get a 'neighbors)
+				      (cons b a-neighbors))))
+  (cond ((not (member a b-neighbors)) (setf (get b 'neighbors)
+				      (cons a b-neighbors))))
+)
+
+11-5:
+(defun distance (n1 n2)
+  (sqrt (+ (square (- (get n1 'x) (get n2 'x)))
+	   (square (- (get n1 'y) (get n2 'y)))))
+)
+
+(defun square (x) (* x x))

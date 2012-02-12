@@ -1,0 +1,30 @@
+;Alpha Chen
+;12/8/99
+;Period 2: AI
+
+(defun transfer (a b maxa maxb desired &optional (queue ()))
+  (cond ((eq a desired) (print (append '(I can produce ) (list desired) '( units of water in A))) queue)
+	((eq b desired) (print (append '(I can produce ) (list desired) '( units of water in B))) queue)
+	((eq a maxa) (transfer 0 b maxa maxb desired (append queue '((EMPTY A)))))
+	((eq b 0) (transfer a maxb maxa maxb desired (append queue '((FILL B)))))
+	((< b (- maxa a)) (transfer (+ a b) 0 maxa maxb desired (append queue '((EMPTY B INTO A)))))
+	(T (transfer maxa (- b (- maxa a)) maxa maxb desired (append queue '((FILL A FROM B)))))
+  )
+)
+
+(defun water-crock (maxa maxb desired)
+  (setq flag NIL)
+  (cond ((> maxa maxb) (setq tempmaxb maxa) (setq tempmaxa maxb))
+	(T (setq tempmaxb maxb) (setq tempmaxa maxa)))
+  (setq max (/ tempmaxb (- tempmaxb tempmaxa)))
+  (do ((tempa 0)
+       (tempb 0))
+      ((and (> tempa max) (> tempb max) (not flag)) NIL (transfer a b maxa maxb desired))
+      (if (< tempa max) (setq tempa (+ 1 tempa)) (setq tempb (+ 1 tempb)))
+      (cond ((eq desired (- (* tempmaxb tempb) (* tempmaxa tempa))) (setq b tempb) (setq a tempa) (setq flag 1))
+  )
+)
+)
+
+;function is supposed to see whether maxb*integer - maxa*integer is equal
+; to desired... that is the mathematical function for it.

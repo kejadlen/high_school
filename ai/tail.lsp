@@ -1,0 +1,12 @@
+(defun countatom (lst &optional (counter 0))
+  (cond ((not lst) counter)
+        ((atom lst) (+ 1 counter))
+        (T (countatom (first lst) (countatom (rest lst) counter)))
+  )
+)
+
+(defun myreverse (lst &optional mylist)
+  (cond ((not lst) (cons mylist lst))
+        (T (myreverse (rest lst) (cons (first lst) mylist)))
+  )
+)
